@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>Guia de Ferramentas de Bioinformática</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+    <a href="resumo-bioinformatica.html">📚 Resumo</a>
+    <a href="mapa-mental-bioinformatica.html">🧠 Mapa Mental</a>
+    <a href="pipeline-bioinformatica.html">🧬 Pipeline</a>
+    <a href="formatos-arquivos-bioinformatica.html">📂 Arquivos</a>
+    <a href="rna-seq.html">🧫 RNA-Seq</a>
+    <a href="machine-learning-genomica.html">🤖 ML Genômica</a>
+    <a href="curso-bioinformatica.html">📄 Curso</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>Ferramentas</h2>
+
+        <a href="#ncbi">1. NCBI</a>
+        <a href="#blast">2. BLAST</a>
+        <a href="#sift">3. SIFT</a>
+        <a href="#polyphen">4. PolyPhen</a>
+        <a href="#fluxo">Fluxo de Análise</a>
+        <a href="#dicas">Dicas</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>🧬 Guia Prático de Ferramentas de Bioinformática</h1>
+
+        <h2>NCBI • BLAST • SIFT • PolyPhen</h2>
+
+        <p>Este guia apresenta um passo a passo prático das principais ferramentas usadas em bioinformática
+            para análise de sequências, identificação de genes e predição de mutações.</p>
+
+
+        <div class="section" id="ncbi">
+
+            <h2>1️⃣ NCBI</h2>
+
+            <p>O <b>NCBI (National Center for Biotechnology Information)</b> é um dos maiores repositórios mundiais de
+                dados biológicos.</p>
+
+            <ul>
+                <li>DNA</li>
+                <li>RNA</li>
+                <li>Proteínas</li>
+                <li>Genomas completos</li>
+                <li>Artigos científicos</li>
+            </ul>
+
+            <p>🌐 <a href="https://www.ncbi.nlm.nih.gov" target="_blank">https://www.ncbi.nlm.nih.gov</a></p>
+
+            <h3>Principais ferramentas</h3>
+
+            <table>
+                <tr>
+                    <th>Ferramenta</th>
+                    <th>Função</th>
+                </tr>
+
+                <tr>
+                    <td>Entrez</td>
+                    <td>Sistema de busca integrado</td>
+                </tr>
+
+                <tr>
+                    <td>GenBank</td>
+                    <td>Banco de sequências de DNA</td>
+                </tr>
+
+                <tr>
+                    <td>PubMed</td>
+                    <td>Literatura científica</td>
+                </tr>
+
+                <tr>
+                    <td>BLAST</td>
+                    <td>Comparação de sequências</td>
+                </tr>
+
+                <tr>
+                    <td>OMIM</td>
+                    <td>Genes e doenças humanas</td>
+                </tr>
+
+            </table>
+
+            <h3>Exemplo de sequência FASTA</h3>
+
+            <pre>
+>Gene_example
+ATGCGTACGATCGATCGATCGATCGAT
+</pre>
+
+        </div>
+
+
+        <div class="section" id="blast">
+
+            <h2>2️⃣ BLAST</h2>
+
+            <p>BLAST permite comparar sequências biológicas e identificar similaridades.</p>
+
+            <ul>
+                <li>genes semelhantes</li>
+                <li>relações evolutivas</li>
+                <li>função de proteínas</li>
+            </ul>
+
+            <p>🌐 <a href="https://blast.ncbi.nlm.nih.gov" target="_blank">BLAST</a></p>
+
+            <h3>Tipos de BLAST</h3>
+
+            <table>
+
+                <tr>
+                    <th>Tipo</th>
+                    <th>Comparação</th>
+                </tr>
+
+                <tr>
+                    <td>BLASTn</td>
+                    <td>DNA vs DNA</td>
+                </tr>
+
+                <tr>
+                    <td>BLASTp</td>
+                    <td>Proteína vs proteína</td>
+                </tr>
+
+                <tr>
+                    <td>BLASTx</td>
+                    <td>DNA traduzido vs proteínas</td>
+                </tr>
+
+                <tr>
+                    <td>tBLASTn</td>
+                    <td>Proteína vs DNA traduzido</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <div class="section" id="sift">
+
+            <h2>3️⃣ SIFT</h2>
+
+            <p><b>SIFT</b> prediz se uma substituição de aminoácido afeta a função de uma proteína.</p>
+
+            <p>Baseado em conservação evolutiva.</p>
+
+            <p>🌐 <a href="https://sift.bii.a-star.edu.sg" target="_blank">SIFT</a></p>
+
+            <h3>Interpretação</h3>
+
+            <table>
+
+                <tr>
+                    <th>Score</th>
+                    <th>Significado</th>
+                </tr>
+
+                <tr>
+                    <td>≤ 0.05</td>
+                    <td>Mutação provavelmente danosa</td>
+                </tr>
+
+                <tr>
+                    <td>> 0.05</td>
+                    <td>Mutação tolerada</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <div class="section" id="polyphen">
+
+            <h2>4️⃣ PolyPhen</h2>
+
+            <p><b>PolyPhen</b> prediz o impacto estrutural de mutações de aminoácidos.</p>
+
+            <p>🌐 <a href="http://genetics.bwh.harvard.edu/pph2/" target="_blank">PolyPhen</a></p>
+
+            <h3>Resultados</h3>
+
+            <table>
+
+                <tr>
+                    <th>Resultado</th>
+                    <th>Significado</th>
+                </tr>
+
+                <tr>
+                    <td>Benign</td>
+                    <td>Não afeta a proteína</td>
+                </tr>
+
+                <tr>
+                    <td>Possibly damaging</td>
+                    <td>Possível impacto</td>
+                </tr>
+
+                <tr>
+                    <td>Probably damaging</td>
+                    <td>Alto impacto funcional</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <div class="section" id="fluxo">
+
+            <h2>🧪 Fluxo típico de análise</h2>
+
+            <pre>
+
+NCBI → obter sequência
+       ↓
+BLAST → encontrar homólogos
+       ↓
+SIFT → avaliar mutação
+       ↓
+PolyPhen → prever impacto estrutural
+
+</pre>
+
+        </div>
+
+
+        <div class="section" id="dicas">
+
+            <h2>🧠 Dicas importantes</h2>
+
+            <ul>
+
+                <li>Use múltiplas ferramentas de predição</li>
+
+                <li>Compare sequência selvagem vs mutante</li>
+
+                <li>Confirme resultados experimentalmente</li>
+
+                <li>Use bancos de dados atualizados</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2>📚 Ferramentas complementares</h2>
+
+            <table>
+
+                <tr>
+                    <th>Ferramenta</th>
+                    <th>Função</th>
+                </tr>
+
+                <tr>
+                    <td>UniProt</td>
+                    <td>Banco de proteínas</td>
+                </tr>
+
+                <tr>
+                    <td>KEGG</td>
+                    <td>Vias metabólicas</td>
+                </tr>
+
+                <tr>
+                    <td>PDB</td>
+                    <td>Estruturas 3D</td>
+                </tr>
+
+                <tr>
+                    <td>Ensembl</td>
+                    <td>Genomas anotados</td>
+                </tr>
+
+                <tr>
+                    <td>Clustal Omega</td>
+                    <td>Alinhamento múltiplo</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <strong>Bioinformática — Portal de Estudos</strong>
+
+            <div class="footer-credit">
+                Criado por Anderson Matte
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/andersonmatte/" target="_blank">
+                💼 LinkedIn
+            </a>
+
+            <a href="https://github.com/andersonmatte/andersonmatte" target="_blank">
+                📱 GitHub
+            </a>
+
+            <a href="https://medium.com/@anderson.matte" target="_blank">
+                📰 Medium
+            </a>
+
+            <a href="https://lattes.cnpq.br/8025680832155113" target="_blank">
+                🌎 Lattes
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

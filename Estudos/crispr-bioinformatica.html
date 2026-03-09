@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>CRISPR Bioinformática</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>CRISPR</h2>
+
+        <a href="#introducao">Introdução</a>
+        <a href="#historia">História</a>
+        <a href="#componentes">Componentes</a>
+        <a href="#tipos">Tipos de Sistemas</a>
+        <a href="#mecanismo">Mecanismo de Edição</a>
+        <a href="#design">Design de gRNA</a>
+        <a href="#offtarget">Off-target</a>
+        <a href="#pipeline">Pipeline Bioinformático</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#bases">Bancos de Dados</a>
+        <a href="#analise">Análise de Resultados</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#recursos">Recursos</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>CRISPR e Bioinformática</h1>
+
+        <div class="section" id="introducao">
+
+            <h2>Introdução</h2>
+
+            <p>
+                CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) é um sistema de defesa adaptativo
+                encontrado em bactérias e arqueias.
+            </p>
+
+            <p>
+                Esse sistema foi adaptado como ferramenta de edição genética capaz de modificar o DNA de organismos com
+                alta precisão.
+            </p>
+
+            <p>
+                A bioinformática desempenha papel essencial no design de guias RNA, análise de off-target e
+                interpretação de experimentos CRISPR.
+            </p>
+
+        </div>
+
+        <div class="section" id="historia">
+
+            <h2>História</h2>
+
+            <table>
+
+                <tr>
+                    <th>Ano</th>
+                    <th>Evento</th>
+                </tr>
+
+                <tr>
+                    <td>1987</td>
+                    <td>Descoberta de sequências CRISPR em bactérias</td>
+                </tr>
+
+                <tr>
+                    <td>2005</td>
+                    <td>Função imunológica sugerida</td>
+                </tr>
+
+                <tr>
+                    <td>2012</td>
+                    <td>Adaptação para edição genética</td>
+                </tr>
+
+                <tr>
+                    <td>2020</td>
+                    <td>Prêmio Nobel para CRISPR-Cas9</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="componentes">
+
+            <h2>Componentes do Sistema CRISPR</h2>
+
+            <ul>
+
+                <li><b>Cas proteins</b> — enzimas que cortam o DNA</li>
+
+                <li><b>crRNA</b> — RNA que reconhece a sequência alvo</li>
+
+                <li><b>tracrRNA</b> — RNA auxiliar</li>
+
+                <li><b>gRNA</b> — RNA guia combinado usado em edição genética</li>
+
+                <li><b>PAM</b> — sequência necessária para reconhecimento pela Cas</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="tipos">
+
+            <h2>Tipos de Sistemas CRISPR</h2>
+
+            <table>
+
+                <tr>
+                    <th>Sistema</th>
+                    <th>Características</th>
+                </tr>
+
+                <tr>
+                    <td>Cas9</td>
+                    <td>Mais usado em edição genética</td>
+                </tr>
+
+                <tr>
+                    <td>Cas12</td>
+                    <td>Reconhecimento diferente de PAM</td>
+                </tr>
+
+                <tr>
+                    <td>Cas13</td>
+                    <td>Alvo em RNA</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="mecanismo">
+
+            <h2>Mecanismo de Edição</h2>
+
+            <pre>
+
+Design do gRNA
+ ↓
+Complexo Cas9-gRNA
+ ↓
+Reconhecimento da sequência alvo
+ ↓
+Corte do DNA
+ ↓
+Reparo do DNA
+
+</pre>
+
+            Tipos de reparo:
+
+            <ul>
+
+                <li>NHEJ — reparo não homólogo</li>
+
+                <li>HDR — reparo dirigido por homologia</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="design">
+
+            <h2>Design de gRNA</h2>
+
+            <p>
+                O design de guias RNA é uma etapa crítica em experimentos CRISPR.
+            </p>
+
+            Critérios importantes:
+
+            <ul>
+
+                <li>Eficiência de corte</li>
+
+                <li>Especificidade</li>
+
+                <li>Presença de sequência PAM</li>
+
+                <li>Minimização de off-targets</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="offtarget">
+
+            <h2>Predição de Off-target</h2>
+
+            <p>
+                Off-targets são cortes indesejados em regiões do genoma semelhantes à sequência alvo.
+            </p>
+
+            Ferramentas de análise:
+
+            <ul>
+
+                <li>CRISPOR</li>
+
+                <li>Cas-OFFinder</li>
+
+                <li>GuideScan</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="pipeline">
+
+            <h2>Pipeline Bioinformático</h2>
+
+            <pre>
+
+Seleção do gene alvo
+ ↓
+Design de gRNA
+ ↓
+Análise de off-target
+ ↓
+Edição genética
+ ↓
+Sequenciamento
+ ↓
+Análise de variantes
+
+</pre>
+
+        </div>
+
+        <div class="section" id="ferramentas">
+
+            <h2>Ferramentas Bioinformáticas</h2>
+
+            <table>
+
+                <tr>
+                    <th>Ferramenta</th>
+                    <th>Função</th>
+                </tr>
+
+                <tr>
+                    <td>CRISPOR</td>
+                    <td>Design de gRNA</td>
+                </tr>
+
+                <tr>
+                    <td>CHOPCHOP</td>
+                    <td>Design de guias CRISPR</td>
+                </tr>
+
+                <tr>
+                    <td>Cas-OFFinder</td>
+                    <td>Análise de off-target</td>
+                </tr>
+
+                <tr>
+                    <td>Benchling</td>
+                    <td>Plataforma integrada de edição genética</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="bases">
+
+            <h2>Bancos de Dados</h2>
+
+            <table>
+
+                <tr>
+                    <th>Banco</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>CRISPRdb</td>
+                    <td>Banco de sequências CRISPR</td>
+                </tr>
+
+                <tr>
+                    <td>Addgene</td>
+                    <td>Repositório de plasmídeos</td>
+                </tr>
+
+                <tr>
+                    <td>CRISPRCasdb</td>
+                    <td>Banco de sistemas CRISPR</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="analise">
+
+            <h2>Análise de Resultados</h2>
+
+            Ferramentas utilizadas após edição:
+
+            <ul>
+
+                <li>TIDE</li>
+
+                <li>CRISPResso</li>
+
+                <li>ICE analysis</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="aplicacoes">
+
+            <h2>Aplicações Científicas</h2>
+
+            <ul>
+
+                <li>Terapia gênica</li>
+
+                <li>Correção de mutações genéticas</li>
+
+                <li>Engenharia de plantas</li>
+
+                <li>Pesquisa biomédica</li>
+
+                <li>Desenvolvimento de modelos animais</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="recursos">
+
+            <h2>Recursos e Documentação</h2>
+
+            <ul>
+
+                <li>CRISPOR — https://crispor.tefor.net</li>
+
+                <li>CHOPCHOP — https://chopchop.cbu.uib.no</li>
+
+                <li>Addgene — https://www.addgene.org</li>
+
+                <li>Benchling — https://www.benchling.com</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <strong>Bioinformática — Portal de Estudos</strong>
+
+            <div class="footer-credit">
+                Criado por Anderson Matte
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/andersonmatte/" target="_blank">
+                💼 LinkedIn
+            </a>
+
+            <a href="https://github.com/andersonmatte/andersonmatte" target="_blank">
+                📱 GitHub
+            </a>
+
+            <a href="https://medium.com/@anderson.matte" target="_blank">
+                📰 Medium
+            </a>
+
+            <a href="https://lattes.cnpq.br/8025680832155113" target="_blank">
+                🌎 Lattes
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

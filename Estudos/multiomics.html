@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>Multi-Omics</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>Multi-Omics</h2>
+
+        <a href="#introducao">Introdução</a>
+        <a href="#camadas">Camadas Ômicas</a>
+        <a href="#motivacao">Motivação</a>
+        <a href="#integracao">Tipos de Integração</a>
+        <a href="#pipeline">Pipeline Multi-Omics</a>
+        <a href="#estatistica">Métodos Estatísticos</a>
+        <a href="#machinelearning">Machine Learning</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#bases">Bancos de Dados</a>
+        <a href="#visualizacao">Visualização</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#recursos">Recursos</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>Multi-Omics</h1>
+
+        <div class="section" id="introducao">
+
+            <h2>Introdução</h2>
+
+            <p>
+                Multi-omics é uma abordagem integrativa que combina diferentes tipos de dados biológicos para
+                compreender sistemas biológicos de forma holística.
+            </p>
+
+            <p>
+                Ao integrar múltiplas camadas moleculares, pesquisadores podem obter uma visão mais completa da
+                regulação celular, redes metabólicas e mecanismos de doenças.
+            </p>
+
+        </div>
+
+        <div class="section" id="camadas">
+
+            <h2>Camadas Ômicas</h2>
+
+            <table>
+
+                <tr>
+                    <th>Camada</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>Genômica</td>
+                    <td>Sequência de DNA e variantes genéticas</td>
+                </tr>
+
+                <tr>
+                    <td>Transcriptômica</td>
+                    <td>Expressão gênica (RNA)</td>
+                </tr>
+
+                <tr>
+                    <td>Proteômica</td>
+                    <td>Proteínas expressas na célula</td>
+                </tr>
+
+                <tr>
+                    <td>Metabolômica</td>
+                    <td>Pequenas moléculas e metabólitos</td>
+                </tr>
+
+                <tr>
+                    <td>Epigenômica</td>
+                    <td>Modificações regulatórias no DNA</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="motivacao">
+
+            <h2>Motivação para Multi-Omics</h2>
+
+            <ul>
+
+                <li>Compreender redes biológicas complexas</li>
+
+                <li>Identificar biomarcadores</li>
+
+                <li>Estudar mecanismos de doenças</li>
+
+                <li>Desenvolver medicina personalizada</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="integracao">
+
+            <h2>Tipos de Integração Multi-Ômica</h2>
+
+            <table>
+
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>Integração horizontal</td>
+                    <td>Combinação de datasets do mesmo tipo</td>
+                </tr>
+
+                <tr>
+                    <td>Integração vertical</td>
+                    <td>Combinação de diferentes camadas ômicas</td>
+                </tr>
+
+                <tr>
+                    <td>Integração diagonal</td>
+                    <td>Combinação entre diferentes estudos e tecnologias</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="pipeline">
+
+            <h2>Pipeline de Análise Multi-Omics</h2>
+
+            <pre>
+
+Aquisição de dados
+ ↓
+Processamento individual
+ ↓
+Normalização
+ ↓
+Integração de datasets
+ ↓
+Análise estatística
+ ↓
+Modelagem computacional
+ ↓
+Interpretação biológica
+
+</pre>
+
+        </div>
+
+        <div class="section" id="estatistica">
+
+            <h2>Métodos Estatísticos</h2>
+
+            Técnicas comuns:
+
+            <ul>
+
+                <li>PCA (Principal Component Analysis)</li>
+
+                <li>CCA (Canonical Correlation Analysis)</li>
+
+                <li>PLS (Partial Least Squares)</li>
+
+                <li>Matrix factorization</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="machinelearning">
+
+            <h2>Machine Learning em Multi-Omics</h2>
+
+            <p>
+                Modelos de aprendizado de máquina são usados para integrar datasets complexos e identificar padrões
+                biológicos.
+            </p>
+
+            Algoritmos utilizados:
+
+            <ul>
+
+                <li>Random Forest</li>
+
+                <li>Support Vector Machines</li>
+
+                <li>Deep Learning</li>
+
+                <li>Autoencoders</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="ferramentas">
+
+            <h2>Ferramentas Bioinformáticas</h2>
+
+            <table>
+
+                <tr>
+                    <th>Ferramenta</th>
+                    <th>Função</th>
+                </tr>
+
+                <tr>
+                    <td>MixOmics</td>
+                    <td>Integração de datasets multi-ômicos</td>
+                </tr>
+
+                <tr>
+                    <td>MOFA</td>
+                    <td>Modelagem de fatores multi-ômicos</td>
+                </tr>
+
+                <tr>
+                    <td>Cytoscape</td>
+                    <td>Visualização de redes biológicas</td>
+                </tr>
+
+                <tr>
+                    <td>OmicsNet</td>
+                    <td>Análise de redes multi-ômicas</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="bases">
+
+            <h2>Bancos de Dados Multi-Omics</h2>
+
+            <table>
+
+                <tr>
+                    <th>Banco</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>TCGA</td>
+                    <td>Dados multi-ômicos de câncer</td>
+                </tr>
+
+                <tr>
+                    <td>GTEx</td>
+                    <td>Expressão gênica em tecidos humanos</td>
+                </tr>
+
+                <tr>
+                    <td>PRIDE</td>
+                    <td>Dados de proteômica</td>
+                </tr>
+
+                <tr>
+                    <td>MetaboLights</td>
+                    <td>Banco de metabolômica</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="visualizacao">
+
+            <h2>Visualização de Redes Biológicas</h2>
+
+            Ferramentas utilizadas:
+
+            <ul>
+
+                <li>Cytoscape</li>
+
+                <li>Gephi</li>
+
+                <li>OmicsNet</li>
+
+            </ul>
+
+            <p>
+                Essas ferramentas permitem visualizar interações entre genes, proteínas e metabólitos.
+            </p>
+
+        </div>
+
+        <div class="section" id="aplicacoes">
+
+            <h2>Aplicações Científicas</h2>
+
+            <ul>
+
+                <li>Medicina personalizada</li>
+
+                <li>Pesquisa em câncer</li>
+
+                <li>Biologia de sistemas</li>
+
+                <li>Descoberta de biomarcadores</li>
+
+                <li>Farmacogenômica</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="recursos">
+
+            <h2>Recursos e Documentação</h2>
+
+            <ul>
+
+                <li>MixOmics — https://mixomics.org</li>
+
+                <li>Cytoscape — https://cytoscape.org</li>
+
+                <li>TCGA — https://www.cancer.gov/tcga</li>
+
+                <li>MetaboLights — https://www.ebi.ac.uk/metabolights</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <strong>Bioinformática — Portal de Estudos</strong>
+
+            <div class="footer-credit">
+                Criado por Anderson Matte
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/andersonmatte/" target="_blank">
+                💼 LinkedIn
+            </a>
+
+            <a href="https://github.com/andersonmatte/andersonmatte" target="_blank">
+                📱 GitHub
+            </a>
+
+            <a href="https://medium.com/@anderson.matte" target="_blank">
+                📰 Medium
+            </a>
+
+            <a href="https://lattes.cnpq.br/8025680832155113" target="_blank">
+                🌎 Lattes
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

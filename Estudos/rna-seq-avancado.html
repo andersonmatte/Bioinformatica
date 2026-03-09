@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>RNA-Seq Avançado</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>RNA-Seq</h2>
+
+        <a href="#introducao">Introdução</a>
+        <a href="#conceitos">Conceitos Fundamentais</a>
+        <a href="#workflow">Workflow Experimental</a>
+        <a href="#pipeline">Pipeline Bioinformático</a>
+        <a href="#formatos">Formatos de Arquivos</a>
+        <a href="#qc">Controle de Qualidade</a>
+        <a href="#alignment">Alinhamento</a>
+        <a href="#quantificacao">Quantificação</a>
+        <a href="#normalizacao">Normalização</a>
+        <a href="#diferencial">Expressão Diferencial</a>
+        <a href="#splicing">Splicing Alternativo</a>
+        <a href="#funcional">Análise Funcional</a>
+        <a href="#visualizacao">Visualização</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#recursos">Recursos</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>RNA-Seq Avançado</h1>
+
+        <div class="section" id="introducao">
+
+            <h2>Introdução</h2>
+
+            <p>
+                RNA-Seq (RNA Sequencing) é uma técnica baseada em NGS utilizada para analisar o transcriptoma completo
+                de um organismo.
+            </p>
+
+            <p>
+                O transcriptoma representa todas as moléculas de RNA expressas em uma célula ou tecido em um determinado
+                momento.
+            </p>
+
+            <p>
+                RNA-Seq permite investigar expressão gênica, isoformas, eventos de splicing alternativo e regulação
+                gênica.
+            </p>
+
+        </div>
+
+        <div class="section" id="conceitos">
+
+            <h2>Conceitos Fundamentais</h2>
+
+            <ul>
+
+                <li><b>Transcriptoma</b> — conjunto de RNAs expressos em uma célula</li>
+
+                <li><b>Gene expression</b> — nível de atividade de um gene</li>
+
+                <li><b>Isoformas</b> — diferentes variantes de RNA produzidas a partir do mesmo gene</li>
+
+                <li><b>Splicing alternativo</b> — combinação variável de éxons</li>
+
+                <li><b>Read counts</b> — número de reads alinhadas a um gene</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="workflow">
+
+            <h2>Workflow Experimental</h2>
+
+            <pre>
+
+Extração de RNA
+ ↓
+Purificação
+ ↓
+Conversão para cDNA
+ ↓
+Preparação de biblioteca
+ ↓
+Sequenciamento
+ ↓
+FASTQ
+
+</pre>
+
+        </div>
+
+        <div class="section" id="pipeline">
+
+            <h2>Pipeline Bioinformático</h2>
+
+            <pre>
+
+FASTQ
+ ↓
+Controle de Qualidade
+ ↓
+Trimming
+ ↓
+Alinhamento ao genoma
+ ↓
+Quantificação de expressão
+ ↓
+Normalização
+ ↓
+Análise diferencial
+ ↓
+Interpretação biológica
+
+</pre>
+
+        </div>
+
+        <div class="section" id="formatos">
+
+            <h2>Formatos de Arquivos</h2>
+
+            <table>
+
+                <tr>
+                    <th>Formato</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>FASTQ</td>
+                    <td>Reads brutas com qualidade</td>
+                </tr>
+
+                <tr>
+                    <td>BAM</td>
+                    <td>Reads alinhadas</td>
+                </tr>
+
+                <tr>
+                    <td>GTF/GFF</td>
+                    <td>Anotação de genes</td>
+                </tr>
+
+                <tr>
+                    <td>Count Matrix</td>
+                    <td>Matriz de expressão gênica</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="qc">
+
+            <h2>Controle de Qualidade</h2>
+
+            Ferramentas comuns:
+
+            <ul>
+
+                <li>FastQC</li>
+
+                <li>MultiQC</li>
+
+                <li>Trimmomatic</li>
+
+                <li>Cutadapt</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="alignment">
+
+            <h2>Alinhamento de Reads</h2>
+
+            Ferramentas especializadas para RNA-Seq:
+
+            <ul>
+
+                <li>STAR</li>
+
+                <li>HISAT2</li>
+
+                <li>TopHat2</li>
+
+            </ul>
+
+            <p>
+                Esses alinhadores são capazes de lidar com junções exon-exon resultantes de splicing.
+            </p>
+
+        </div>
+
+        <div class="section" id="quantificacao">
+
+            <h2>Quantificação de Expressão</h2>
+
+            Métodos de quantificação:
+
+            <ul>
+
+                <li>HTSeq</li>
+
+                <li>FeatureCounts</li>
+
+                <li>Salmon</li>
+
+                <li>Kallisto</li>
+
+            </ul>
+
+            Métricas comuns:
+
+            <ul>
+
+                <li>RPKM</li>
+                <li>FPKM</li>
+                <li>TPM</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="normalizacao">
+
+            <h2>Normalização</h2>
+
+            <p>
+                A normalização corrige diferenças de profundidade de sequenciamento entre amostras.
+            </p>
+
+            Métodos:
+
+            <ul>
+
+                <li>TMM (Trimmed Mean of M values)</li>
+
+                <li>DESeq normalization</li>
+
+                <li>Quantile normalization</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="diferencial">
+
+            <h2>Análise de Expressão Diferencial</h2>
+
+            <p>
+                Identifica genes cuja expressão difere entre condições experimentais.
+            </p>
+
+            Ferramentas principais:
+
+            <ul>
+
+                <li>DESeq2</li>
+
+                <li>edgeR</li>
+
+                <li>limma-voom</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="splicing">
+
+            <h2>Splicing Alternativo</h2>
+
+            Ferramentas para análise:
+
+            <ul>
+
+                <li>rMATS</li>
+
+                <li>DEXSeq</li>
+
+                <li>SUPPA</li>
+
+            </ul>
+
+            Essas ferramentas detectam eventos como:
+
+            <ul>
+
+                <li>exon skipping</li>
+                <li>intron retention</li>
+                <li>alternative splice sites</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="funcional">
+
+            <h2>Análise Funcional</h2>
+
+            Após identificar genes diferencialmente expressos, análises funcionais são realizadas.
+
+            Ferramentas:
+
+            <ul>
+
+                <li>Gene Ontology enrichment</li>
+
+                <li>KEGG pathway analysis</li>
+
+                <li>GSEA (Gene Set Enrichment Analysis)</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="visualizacao">
+
+            <h2>Visualização de Dados</h2>
+
+            Gráficos comuns:
+
+            <ul>
+
+                <li>Heatmap</li>
+                <li>PCA plot</li>
+                <li>Volcano plot</li>
+                <li>MA plot</li>
+
+            </ul>
+
+            Ferramentas:
+
+            <ul>
+
+                <li>R / Bioconductor</li>
+                <li>IGV</li>
+                <li>UCSC Genome Browser</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="ferramentas">
+
+            <h2>Ferramentas Bioinformáticas</h2>
+
+            <table>
+
+                <tr>
+                    <th>Categoria</th>
+                    <th>Ferramenta</th>
+                </tr>
+
+                <tr>
+                    <td>QC</td>
+                    <td>FastQC</td>
+                </tr>
+
+                <tr>
+                    <td>Alignment</td>
+                    <td>STAR</td>
+                </tr>
+
+                <tr>
+                    <td>Quantificação</td>
+                    <td>HTSeq</td>
+                </tr>
+
+                <tr>
+                    <td>Differential Expression</td>
+                    <td>DESeq2</td>
+                </tr>
+
+                <tr>
+                    <td>Splicing</td>
+                    <td>rMATS</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="aplicacoes">
+
+            <h2>Aplicações Científicas</h2>
+
+            <ul>
+
+                <li>Estudos de expressão gênica</li>
+
+                <li>Pesquisa em câncer</li>
+
+                <li>Biologia do desenvolvimento</li>
+
+                <li>Resposta a tratamentos</li>
+
+                <li>Identificação de biomarcadores</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="recursos">
+
+            <h2>Recursos e Bases de Dados</h2>
+
+            <ul>
+
+                <li>GEO Database — https://www.ncbi.nlm.nih.gov/geo</li>
+
+                <li>ENCODE Project — https://www.encodeproject.org</li>
+
+                <li>Bioconductor — https://bioconductor.org</li>
+
+                <li>KEGG Pathways — https://www.kegg.jp</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <strong>Bioinformática — Portal de Estudos</strong>
+
+            <div class="footer-credit">
+                Criado por Anderson Matte
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/andersonmatte/" target="_blank">
+                💼 LinkedIn
+            </a>
+
+            <a href="https://github.com/andersonmatte/andersonmatte" target="_blank">
+                📱 GitHub
+            </a>
+
+            <a href="https://medium.com/@anderson.matte" target="_blank">
+                📰 Medium
+            </a>
+
+            <a href="https://lattes.cnpq.br/8025680832155113" target="_blank">
+                🌎 Lattes
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

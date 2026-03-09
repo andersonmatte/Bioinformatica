@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>Metagenômica</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>Metagenômica</h2>
+
+        <a href="#introducao">Introdução</a>
+        <a href="#conceitos">Conceitos Fundamentais</a>
+        <a href="#abordagens">Abordagens Metagenômicas</a>
+        <a href="#pipeline">Pipeline Metagenômico</a>
+        <a href="#dados">Tipos de Dados</a>
+        <a href="#qc">Controle de Qualidade</a>
+        <a href="#taxonomia">Classificação Taxonômica</a>
+        <a href="#assembly">Montagem Metagenômica</a>
+        <a href="#funcional">Análise Funcional</a>
+        <a href="#diversidade">Diversidade Microbiana</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#bases">Bancos de Dados</a>
+        <a href="#visualizacao">Visualização</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#recursos">Recursos</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>Metagenômica</h1>
+
+        <div class="section" id="introducao">
+
+            <h2>Introdução</h2>
+
+            <p>
+                Metagenômica é o estudo do material genético recuperado diretamente de comunidades microbianas presentes
+                em ambientes naturais.
+            </p>
+
+            <p>
+                Ao contrário da genômica tradicional, que analisa organismos isolados, a metagenômica permite estudar
+                populações microbianas complexas sem necessidade de cultivo em laboratório.
+            </p>
+
+            <p>
+                Essa abordagem revolucionou o estudo do microbioma humano, microbiomas ambientais e ecossistemas
+                microbianos.
+            </p>
+
+        </div>
+
+        <div class="section" id="conceitos">
+
+            <h2>Conceitos Fundamentais</h2>
+
+            <ul>
+
+                <li><b>Microbioma</b> — conjunto de microrganismos presentes em um ambiente</li>
+
+                <li><b>Metagenoma</b> — conjunto de genomas da comunidade microbiana</li>
+
+                <li><b>OTU (Operational Taxonomic Unit)</b> — unidade usada para classificar microrganismos</li>
+
+                <li><b>ASV (Amplicon Sequence Variant)</b> — sequência única em análise de amplicons</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="abordagens">
+
+            <h2>Abordagens Metagenômicas</h2>
+
+            <table>
+
+                <tr>
+                    <th>Abordagem</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>16S rRNA sequencing</td>
+                    <td>Sequenciamento de regiões do gene 16S para identificar bactérias</td>
+                </tr>
+
+                <tr>
+                    <td>Shotgun metagenomics</td>
+                    <td>Sequenciamento de todo o DNA presente na amostra</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="pipeline">
+
+            <h2>Pipeline Metagenômico</h2>
+
+            <pre>
+
+Coleta de amostra
+ ↓
+Extração de DNA
+ ↓
+Sequenciamento
+ ↓
+FASTQ
+ ↓
+Controle de qualidade
+ ↓
+Classificação taxonômica
+ ↓
+Análise funcional
+ ↓
+Interpretação ecológica
+
+</pre>
+
+        </div>
+
+        <div class="section" id="dados">
+
+            <h2>Tipos de Dados Metagenômicos</h2>
+
+            <ul>
+
+                <li>Sequenciamento 16S rRNA</li>
+
+                <li>Shotgun metagenomics</li>
+
+                <li>Metatranscriptomics</li>
+
+                <li>Metaproteomics</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="qc">
+
+            <h2>Controle de Qualidade</h2>
+
+            Ferramentas comuns:
+
+            <ul>
+
+                <li>FastQC</li>
+
+                <li>Trimmomatic</li>
+
+                <li>Cutadapt</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="taxonomia">
+
+            <h2>Classificação Taxonômica</h2>
+
+            <p>
+                A classificação taxonômica identifica quais microrganismos estão presentes em uma amostra.
+            </p>
+
+            Ferramentas populares:
+
+            <ul>
+
+                <li>Kraken2</li>
+
+                <li>MetaPhlAn</li>
+
+                <li>Centrifuge</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="assembly">
+
+            <h2>Montagem Metagenômica</h2>
+
+            <p>
+                A montagem metagenômica reconstrói genomas a partir de reads metagenômicas.
+            </p>
+
+            Ferramentas comuns:
+
+            <ul>
+
+                <li>MEGAHIT</li>
+
+                <li>MetaSPAdes</li>
+
+                <li>IDBA-UD</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="funcional">
+
+            <h2>Análise Funcional</h2>
+
+            <p>
+                A análise funcional identifica genes e vias metabólicas presentes na comunidade microbiana.
+            </p>
+
+            Ferramentas:
+
+            <ul>
+
+                <li>HUMAnN</li>
+
+                <li>EggNOG</li>
+
+                <li>KEGG Mapper</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="diversidade">
+
+            <h2>Diversidade Microbiana</h2>
+
+            Tipos de diversidade:
+
+            <ul>
+
+                <li>Alpha diversity — diversidade dentro da amostra</li>
+
+                <li>Beta diversity — comparação entre amostras</li>
+
+            </ul>
+
+            Métricas:
+
+            <ul>
+
+                <li>Shannon index</li>
+
+                <li>Simpson index</li>
+
+                <li>Bray-Curtis distance</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="ferramentas">
+
+            <h2>Ferramentas Bioinformáticas</h2>
+
+            <table>
+
+                <tr>
+                    <th>Categoria</th>
+                    <th>Ferramenta</th>
+                </tr>
+
+                <tr>
+                    <td>Análise 16S</td>
+                    <td>QIIME2</td>
+                </tr>
+
+                <tr>
+                    <td>Taxonomia</td>
+                    <td>Kraken2</td>
+                </tr>
+
+                <tr>
+                    <td>Assembly</td>
+                    <td>MEGAHIT</td>
+                </tr>
+
+                <tr>
+                    <td>Análise funcional</td>
+                    <td>HUMAnN</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="bases">
+
+            <h2>Bancos de Dados</h2>
+
+            <table>
+
+                <tr>
+                    <th>Banco</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>SILVA</td>
+                    <td>Banco de sequências 16S</td>
+                </tr>
+
+                <tr>
+                    <td>Greengenes</td>
+                    <td>Banco taxonômico para microbioma</td>
+                </tr>
+
+                <tr>
+                    <td>MG-RAST</td>
+                    <td>Plataforma de análise metagenômica</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="visualizacao">
+
+            <h2>Visualização de Dados</h2>
+
+            Ferramentas comuns:
+
+            <ul>
+
+                <li>Krona</li>
+
+                <li>QIIME2 visualizations</li>
+
+                <li>R (phyloseq)</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="aplicacoes">
+
+            <h2>Aplicações Científicas</h2>
+
+            <ul>
+
+                <li>Estudos do microbioma humano</li>
+
+                <li>Ecologia microbiana</li>
+
+                <li>Biotecnologia</li>
+
+                <li>Agricultura</li>
+
+                <li>Monitoramento ambiental</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="recursos">
+
+            <h2>Recursos e Documentação</h2>
+
+            <ul>
+
+                <li>QIIME2 — https://qiime2.org</li>
+
+                <li>Kraken2 — https://ccb.jhu.edu/software/kraken2</li>
+
+                <li>MG-RAST — https://www.mg-rast.org</li>
+
+                <li>SILVA database — https://www.arb-silva.de</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <strong>Bioinformática — Portal de Estudos</strong>
+
+            <div class="footer-credit">
+                Criado por Anderson Matte
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/andersonmatte/" target="_blank">
+                💼 LinkedIn
+            </a>
+
+            <a href="https://github.com/andersonmatte/andersonmatte" target="_blank">
+                📱 GitHub
+            </a>
+
+            <a href="https://medium.com/@anderson.matte" target="_blank">
+                📰 Medium
+            </a>
+
+            <a href="https://lattes.cnpq.br/8025680832155113" target="_blank">
+                🌎 Lattes
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

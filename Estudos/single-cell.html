@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>Single-Cell Genomics</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>Single Cell</h2>
+
+        <a href="#introducao">Introdução</a>
+        <a href="#conceitos">Conceitos Fundamentais</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#workflow">Workflow Experimental</a>
+        <a href="#pipeline">Pipeline Bioinformático</a>
+        <a href="#preprocessamento">Pré-processamento</a>
+        <a href="#normalizacao">Normalização</a>
+        <a href="#dimensionalidade">Redução de Dimensionalidade</a>
+        <a href="#clustering">Clustering Celular</a>
+        <a href="#anotacao">Anotação Celular</a>
+        <a href="#trajetoria">Análise de Trajetória</a>
+        <a href="#integracao">Integração de Dados</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#bases">Bancos de Dados</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#recursos">Recursos</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>Single-Cell Genomics</h1>
+
+        <div class="section" id="introducao">
+
+            <h2>Introdução</h2>
+
+            <p>
+                Single-cell sequencing permite analisar o perfil molecular de células individuais.
+            </p>
+
+            <p>
+                Ao contrário das abordagens tradicionais que analisam tecidos inteiros (bulk sequencing), essa técnica
+                revela a heterogeneidade celular presente em tecidos complexos.
+            </p>
+
+            <p>
+                Single-cell RNA-seq (scRNA-seq) é atualmente a aplicação mais difundida dessa tecnologia.
+            </p>
+
+        </div>
+
+        <div class="section" id="conceitos">
+
+            <h2>Conceitos Fundamentais</h2>
+
+            <ul>
+
+                <li><b>Single-cell</b> — análise de uma única célula</li>
+
+                <li><b>Transcriptoma celular</b> — conjunto de RNAs expressos em uma célula</li>
+
+                <li><b>Cell heterogeneity</b> — diversidade entre células do mesmo tecido</li>
+
+                <li><b>Cell type</b> — classificação funcional de células</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="tecnologias">
+
+            <h2>Tecnologias de Single-Cell</h2>
+
+            <table>
+
+                <tr>
+                    <th>Tecnologia</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>10x Genomics</td>
+                    <td>Plataforma de microgotas para captura de células</td>
+                </tr>
+
+                <tr>
+                    <td>Smart-Seq</td>
+                    <td>Sequenciamento completo de transcriptomas celulares</td>
+                </tr>
+
+                <tr>
+                    <td>Drop-seq</td>
+                    <td>Captura de células em gotas microfluídicas</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="workflow">
+
+            <h2>Workflow Experimental</h2>
+
+            <pre>
+
+Isolamento celular
+ ↓
+Captura de células
+ ↓
+Conversão RNA → cDNA
+ ↓
+Amplificação
+ ↓
+Sequenciamento
+ ↓
+FASTQ
+
+</pre>
+
+        </div>
+
+        <div class="section" id="pipeline">
+
+            <h2>Pipeline Bioinformático</h2>
+
+            <pre>
+
+FASTQ
+ ↓
+Alinhamento
+ ↓
+Contagem de genes
+ ↓
+Filtragem de células
+ ↓
+Normalização
+ ↓
+Redução de dimensionalidade
+ ↓
+Clustering
+ ↓
+Anotação celular
+
+</pre>
+
+        </div>
+
+        <div class="section" id="preprocessamento">
+
+            <h2>Pré-processamento</h2>
+
+            Etapas importantes:
+
+            <ul>
+
+                <li>Filtragem de células de baixa qualidade</li>
+
+                <li>Remoção de genes pouco expressos</li>
+
+                <li>Correção de doublets</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="normalizacao">
+
+            <h2>Normalização</h2>
+
+            <p>
+                A normalização corrige diferenças no número de reads entre células.
+            </p>
+
+            Métodos comuns:
+
+            <ul>
+
+                <li>Log normalization</li>
+
+                <li>SCTransform</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="dimensionalidade">
+
+            <h2>Redução de Dimensionalidade</h2>
+
+            Técnicas usadas:
+
+            <ul>
+
+                <li>PCA (Principal Component Analysis)</li>
+
+                <li>t-SNE</li>
+
+                <li>UMAP</li>
+
+            </ul>
+
+            <p>
+                Essas técnicas permitem visualizar milhares de células em poucos eixos.
+            </p>
+
+        </div>
+
+        <div class="section" id="clustering">
+
+            <h2>Clustering Celular</h2>
+
+            <p>
+                Clustering agrupa células com perfis de expressão semelhantes.
+            </p>
+
+            Algoritmos usados:
+
+            <ul>
+
+                <li>Louvain</li>
+
+                <li>Leiden</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="anotacao">
+
+            <h2>Anotação de Tipos Celulares</h2>
+
+            <p>
+                Após o clustering, os grupos celulares são identificados usando marcadores gênicos conhecidos.
+            </p>
+
+            Ferramentas:
+
+            <ul>
+
+                <li>SingleR</li>
+
+                <li>CellMarker</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="trajetoria">
+
+            <h2>Análise de Trajetória Celular</h2>
+
+            <p>
+                A análise de trajetória reconstrói processos dinâmicos como diferenciação celular.
+            </p>
+
+            Ferramentas populares:
+
+            <ul>
+
+                <li>Monocle</li>
+
+                <li>Slingshot</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="integracao">
+
+            <h2>Integração de Datasets</h2>
+
+            <p>
+                Integração permite combinar dados de múltiplos experimentos ou tecnologias.
+            </p>
+
+            Ferramentas:
+
+            <ul>
+
+                <li>Seurat integration</li>
+
+                <li>Harmony</li>
+
+                <li>LIGER</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="ferramentas">
+
+            <h2>Ferramentas Bioinformáticas</h2>
+
+            <table>
+
+                <tr>
+                    <th>Ferramenta</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>Seurat</td>
+                    <td>Pacote R para análise single-cell</td>
+                </tr>
+
+                <tr>
+                    <td>Scanpy</td>
+                    <td>Framework Python para análise single-cell</td>
+                </tr>
+
+                <tr>
+                    <td>Cell Ranger</td>
+                    <td>Pipeline da 10x Genomics</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="bases">
+
+            <h2>Bancos de Dados</h2>
+
+            <table>
+
+                <tr>
+                    <th>Banco</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>Human Cell Atlas</td>
+                    <td>Atlas global de células humanas</td>
+                </tr>
+
+                <tr>
+                    <td>Single Cell Expression Atlas</td>
+                    <td>Repositório de datasets single-cell</td>
+                </tr>
+
+                <tr>
+                    <td>GEO</td>
+                    <td>Repositório público de experimentos genômicos</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="aplicacoes">
+
+            <h2>Aplicações Científicas</h2>
+
+            <ul>
+
+                <li>Estudos de câncer</li>
+
+                <li>Imunologia</li>
+
+                <li>Desenvolvimento embrionário</li>
+
+                <li>Neurociência</li>
+
+                <li>Descoberta de novos tipos celulares</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="recursos">
+
+            <h2>Recursos e Documentação</h2>
+
+            <ul>
+
+                <li>Seurat — https://satijalab.org/seurat</li>
+
+                <li>Scanpy — https://scanpy.readthedocs.io</li>
+
+                <li>Human Cell Atlas — https://www.humancellatlas.org</li>
+
+                <li>Single Cell Expression Atlas — https://www.ebi.ac.uk/gxa/sc/home</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <strong>Bioinformática — Portal de Estudos</strong>
+
+            <div class="footer-credit">
+                Criado por Anderson Matte
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/andersonmatte/" target="_blank">
+                💼 LinkedIn
+            </a>
+
+            <a href="https://github.com/andersonmatte/andersonmatte" target="_blank">
+                📱 GitHub
+            </a>
+
+            <a href="https://medium.com/@anderson.matte" target="_blank">
+                📰 Medium
+            </a>
+
+            <a href="https://lattes.cnpq.br/8025680832155113" target="_blank">
+                🌎 Lattes
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

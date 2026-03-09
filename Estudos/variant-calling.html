@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>Variant Calling</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>Variant Calling</h2>
+
+        <a href="#introducao">Introdução</a>
+        <a href="#tipos">Tipos de Variantes</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#formatos">Formatos de Arquivos</a>
+        <a href="#estatistica">Modelos Estatísticos</a>
+        <a href="#metricas">Métricas Importantes</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#gatk">Pipeline GATK</a>
+        <a href="#filtragem">Filtragem de Variantes</a>
+        <a href="#anotacao">Anotação Funcional</a>
+        <a href="#visualizacao">Visualização</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#recursos">Recursos</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>Variant Calling</h1>
+
+        <div class="section" id="introducao">
+
+            <h2>Introdução</h2>
+
+            <p>
+                Variant calling é o processo de identificação de variações genéticas comparando sequências obtidas por
+                sequenciamento com um genoma de referência.
+            </p>
+
+            <p>
+                Essas variantes representam diferenças genéticas entre indivíduos e podem incluir substituições de
+                nucleotídeos, inserções, deleções e rearranjos estruturais.
+            </p>
+
+            <p>
+                A detecção de variantes é um passo central em estudos de genômica, medicina personalizada e pesquisa
+                biomédica.
+            </p>
+
+        </div>
+
+        <div class="section" id="tipos">
+
+            <h2>Tipos de Variantes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Tipo</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>SNP</td>
+                    <td>Substituição de um único nucleotídeo</td>
+                </tr>
+
+                <tr>
+                    <td>Indel</td>
+                    <td>Inserção ou deleção de nucleotídeos</td>
+                </tr>
+
+                <tr>
+                    <td>CNV</td>
+                    <td>Variação no número de cópias de genes</td>
+                </tr>
+
+                <tr>
+                    <td>Structural Variant</td>
+                    <td>Inversões, duplicações e translocações</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="pipeline">
+
+            <h2>Pipeline de Variant Calling</h2>
+
+            <pre>
+
+Sequenciamento
+ ↓
+FASTQ
+ ↓
+Controle de qualidade
+ ↓
+Alinhamento
+ ↓
+BAM
+ ↓
+Processamento do alinhamento
+ ↓
+Variant Calling
+ ↓
+VCF
+ ↓
+Anotação funcional
+
+</pre>
+
+        </div>
+
+        <div class="section" id="formatos">
+
+            <h2>Formatos de Arquivos</h2>
+
+            <table>
+
+                <tr>
+                    <th>Formato</th>
+                    <th>Função</th>
+                </tr>
+
+                <tr>
+                    <td>FASTQ</td>
+                    <td>Sequências brutas com qualidade</td>
+                </tr>
+
+                <tr>
+                    <td>BAM</td>
+                    <td>Sequências alinhadas ao genoma</td>
+                </tr>
+
+                <tr>
+                    <td>VCF</td>
+                    <td>Lista de variantes detectadas</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="estatistica">
+
+            <h2>Modelos Estatísticos</h2>
+
+            <p>
+                Algoritmos de variant calling utilizam modelos probabilísticos para distinguir erros de sequenciamento
+                de variantes reais.
+            </p>
+
+            Principais abordagens:
+
+            <ul>
+
+                <li>Modelos bayesianos</li>
+
+                <li>Modelos de máxima verossimilhança</li>
+
+                <li>Modelos baseados em aprendizado de máquina</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="metricas">
+
+            <h2>Métricas Importantes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Métrica</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>DP</td>
+                    <td>Depth de cobertura</td>
+                </tr>
+
+                <tr>
+                    <td>QUAL</td>
+                    <td>Qualidade da variante</td>
+                </tr>
+
+                <tr>
+                    <td>GQ</td>
+                    <td>Qualidade do genótipo</td>
+                </tr>
+
+                <tr>
+                    <td>AF</td>
+                    <td>Frequência alélica</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="ferramentas">
+
+            <h2>Ferramentas de Variant Calling</h2>
+
+            <table>
+
+                <tr>
+                    <th>Ferramenta</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>GATK</td>
+                    <td>Framework amplamente utilizado para análise de variantes</td>
+                </tr>
+
+                <tr>
+                    <td>FreeBayes</td>
+                    <td>Variant caller baseado em haplótipos</td>
+                </tr>
+
+                <tr>
+                    <td>DeepVariant</td>
+                    <td>Caller baseado em deep learning</td>
+                </tr>
+
+                <tr>
+                    <td>Samtools</td>
+                    <td>Ferramenta clássica para análise de alinhamentos</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="gatk">
+
+            <h2>Pipeline GATK Best Practices</h2>
+
+            <pre>
+
+FASTQ
+ ↓
+BWA alignment
+ ↓
+Mark duplicates
+ ↓
+Base quality recalibration
+ ↓
+HaplotypeCaller
+ ↓
+VCF
+
+</pre>
+
+        </div>
+
+        <div class="section" id="filtragem">
+
+            <h2>Filtragem de Variantes</h2>
+
+            <p>
+                Após a chamada de variantes, filtros são aplicados para remover variantes de baixa confiança.
+            </p>
+
+            Critérios comuns:
+
+            <ul>
+
+                <li>Qualidade mínima</li>
+                <li>Profundidade mínima de leitura</li>
+                <li>Frequência alélica</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="anotacao">
+
+            <h2>Anotação Funcional</h2>
+
+            <p>
+                Após identificar variantes, é necessário avaliar seu impacto biológico.
+            </p>
+
+            Ferramentas populares:
+
+            <ul>
+
+                <li>ANNOVAR</li>
+                <li>SnpEff</li>
+                <li>VEP (Variant Effect Predictor)</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="visualizacao">
+
+            <h2>Visualização de Variantes</h2>
+
+            Ferramentas utilizadas:
+
+            <ul>
+
+                <li>IGV (Integrative Genomics Viewer)</li>
+                <li>UCSC Genome Browser</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="aplicacoes">
+
+            <h2>Aplicações Científicas</h2>
+
+            <ul>
+
+                <li>Diagnóstico genético</li>
+                <li>Pesquisa em câncer</li>
+                <li>Medicina personalizada</li>
+                <li>Estudos populacionais</li>
+                <li>Farmacogenômica</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="recursos">
+
+            <h2>Recursos e Documentação</h2>
+
+            <ul>
+
+                <li>GATK: https://gatk.broadinstitute.org</li>
+                <li>1000 Genomes Project: https://www.internationalgenome.org</li>
+                <li>dbSNP: https://www.ncbi.nlm.nih.gov/snp</li>
+                <li>Ensembl Variant Effect Predictor: https://www.ensembl.org</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <strong>Bioinformática — Portal de Estudos</strong>
+
+            <div class="footer-credit">
+                Criado por Anderson Matte
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/andersonmatte/" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com/andersonmatte/andersonmatte" target="_blank">📱 GitHub</a>
+            <a href="https://medium.com/@anderson.matte" target="_blank">📰 Medium</a>
+            <a href="https://lattes.cnpq.br/8025680832155113" target="_blank">🌎 Lattes</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

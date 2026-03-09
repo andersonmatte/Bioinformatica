@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>Genômica Comparativa</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>Genômica Comparativa</h2>
+
+        <a href="#introducao">Introdução</a>
+        <a href="#conceitos">Conceitos Fundamentais</a>
+        <a href="#comparacao">Tipos de Comparação</a>
+        <a href="#ortologia">Ortologia e Paralogia</a>
+        <a href="#alinhamento">Alinhamento de Sequências</a>
+        <a href="#msa">Alinhamento Múltiplo</a>
+        <a href="#synteny">Synteny</a>
+        <a href="#filogenia">Filogenia Molecular</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#bases">Bancos de Dados</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#visualizacao">Visualização</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#recursos">Recursos</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>Genômica Comparativa</h1>
+
+        <div class="section" id="introducao">
+
+            <h2>Introdução</h2>
+
+            <p>
+                Genômica comparativa é o estudo das similaridades e diferenças entre genomas de diferentes organismos.
+            </p>
+
+            <p>
+                Essa abordagem permite identificar genes conservados, reconstruir relações evolutivas e compreender a
+                função de elementos genéticos.
+            </p>
+
+            <p>
+                Comparar genomas também permite detectar eventos evolutivos como duplicações, deleções, rearranjos e
+                transferência horizontal de genes.
+            </p>
+
+        </div>
+
+        <div class="section" id="conceitos">
+
+            <h2>Conceitos Fundamentais</h2>
+
+            <ul>
+
+                <li><b>Genoma</b> — conjunto completo de DNA de um organismo</li>
+
+                <li><b>Região conservada</b> — sequência mantida ao longo da evolução</li>
+
+                <li><b>Mutação</b> — alteração na sequência genética</li>
+
+                <li><b>Pressão seletiva</b> — força evolutiva que favorece determinadas variantes</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="comparacao">
+
+            <h2>Tipos de Comparação Genômica</h2>
+
+            <ul>
+
+                <li>Comparação gene a gene</li>
+
+                <li>Comparação de famílias gênicas</li>
+
+                <li>Comparação de genomas completos</li>
+
+                <li>Comparação de regiões conservadas</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="ortologia">
+
+            <h2>Ortologia e Paralogia</h2>
+
+            <table>
+
+                <tr>
+                    <th>Termo</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>Ortólogos</td>
+                    <td>Genes em espécies diferentes derivados de um ancestral comum</td>
+                </tr>
+
+                <tr>
+                    <td>Parálogos</td>
+                    <td>Genes duplicados dentro do mesmo genoma</td>
+                </tr>
+
+            </table>
+
+            <p>
+                A distinção entre ortólogos e parálogos é essencial para inferir funções gênicas.
+            </p>
+
+        </div>
+
+        <div class="section" id="alinhamento">
+
+            <h2>Alinhamento de Sequências</h2>
+
+            <p>
+                Alinhamentos de sequências permitem identificar similaridades e inferir relações evolutivas.
+            </p>
+
+            Tipos de alinhamento:
+
+            <ul>
+
+                <li>Alinhamento global</li>
+
+                <li>Alinhamento local</li>
+
+            </ul>
+
+            Ferramentas:
+
+            <ul>
+
+                <li>BLAST</li>
+
+                <li>FASTA</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="msa">
+
+            <h2>Alinhamento Múltiplo de Sequências</h2>
+
+            <p>
+                O alinhamento múltiplo permite comparar três ou mais sequências simultaneamente.
+            </p>
+
+            Ferramentas populares:
+
+            <ul>
+
+                <li>Clustal Omega</li>
+
+                <li>MUSCLE</li>
+
+                <li>MAFFT</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="synteny">
+
+            <h2>Synteny</h2>
+
+            <p>
+                Synteny refere-se à conservação da ordem de genes entre diferentes espécies.
+            </p>
+
+            <p>
+                A análise de synteny ajuda a identificar rearranjos cromossômicos e eventos evolutivos.
+            </p>
+
+            Ferramentas comuns:
+
+            <ul>
+
+                <li>MCScanX</li>
+
+                <li>SynMap</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="filogenia">
+
+            <h2>Filogenia Molecular</h2>
+
+            <p>
+                Filogenia utiliza dados genéticos para reconstruir relações evolutivas entre organismos.
+            </p>
+
+            Métodos:
+
+            <ul>
+
+                <li>Neighbor-Joining</li>
+
+                <li>Maximum Likelihood</li>
+
+                <li>Bayesian Inference</li>
+
+            </ul>
+
+            Ferramentas:
+
+            <ul>
+
+                <li>MEGA</li>
+
+                <li>PhyML</li>
+
+                <li>RAxML</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="pipeline">
+
+            <h2>Pipeline de Genômica Comparativa</h2>
+
+            <pre>
+
+Obtenção de genomas
+ ↓
+Identificação de genes
+ ↓
+Alinhamento de sequências
+ ↓
+Análise filogenética
+ ↓
+Identificação de genes conservados
+ ↓
+Interpretação evolutiva
+
+</pre>
+
+        </div>
+
+        <div class="section" id="bases">
+
+            <h2>Bancos de Dados</h2>
+
+            <table>
+
+                <tr>
+                    <th>Banco</th>
+                    <th>Descrição</th>
+                </tr>
+
+                <tr>
+                    <td>NCBI</td>
+                    <td>Repositório de sequências genômicas</td>
+                </tr>
+
+                <tr>
+                    <td>Ensembl</td>
+                    <td>Anotação de genomas</td>
+                </tr>
+
+                <tr>
+                    <td>UCSC Genome Browser</td>
+                    <td>Visualização genômica</td>
+                </tr>
+
+                <tr>
+                    <td>OrthoDB</td>
+                    <td>Banco de ortólogos</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="ferramentas">
+
+            <h2>Ferramentas Bioinformáticas</h2>
+
+            <table>
+
+                <tr>
+                    <th>Categoria</th>
+                    <th>Ferramenta</th>
+                </tr>
+
+                <tr>
+                    <td>Busca de similaridade</td>
+                    <td>BLAST</td>
+                </tr>
+
+                <tr>
+                    <td>Alinhamento múltiplo</td>
+                    <td>Clustal Omega</td>
+                </tr>
+
+                <tr>
+                    <td>Filogenia</td>
+                    <td>RAxML</td>
+                </tr>
+
+                <tr>
+                    <td>Synteny</td>
+                    <td>MCScanX</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="visualizacao">
+
+            <h2>Visualização Genômica</h2>
+
+            Ferramentas para visualizar comparações genômicas:
+
+            <ul>
+
+                <li>UCSC Genome Browser</li>
+
+                <li>IGV (Integrative Genomics Viewer)</li>
+
+                <li>Circos</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="aplicacoes">
+
+            <h2>Aplicações Científicas</h2>
+
+            <ul>
+
+                <li>Estudos evolutivos</li>
+
+                <li>Identificação de genes conservados</li>
+
+                <li>Descoberta de genes essenciais</li>
+
+                <li>Pesquisa biomédica</li>
+
+                <li>Melhoramento genético</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="recursos">
+
+            <h2>Recursos e Documentação</h2>
+
+            <ul>
+
+                <li>NCBI — https://www.ncbi.nlm.nih.gov</li>
+
+                <li>Ensembl — https://www.ensembl.org</li>
+
+                <li>OrthoDB — https://www.orthodb.org</li>
+
+                <li>Clustal Omega — https://www.ebi.ac.uk/Tools/msa/clustalo</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <strong>Bioinformática — Portal de Estudos</strong>
+
+            <div class="footer-credit">
+                Criado por Anderson Matte
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/andersonmatte/" target="_blank">
+                💼 LinkedIn
+            </a>
+
+            <a href="https://github.com/andersonmatte/andersonmatte" target="_blank">
+                📱 GitHub
+            </a>
+
+            <a href="https://medium.com/@anderson.matte" target="_blank">
+                📰 Medium
+            </a>
+
+            <a href="https://lattes.cnpq.br/8025680832155113" target="_blank">
+                🌎 Lattes
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

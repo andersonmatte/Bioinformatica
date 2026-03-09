@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>NGS - Next Generation Sequencing</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>NGS</h2>
+
+        <a href="#introducao">Introdução</a>
+        <a href="#historia">História do Sequenciamento</a>
+        <a href="#geracoes">Gerações de Sequenciamento</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#conceitos">Conceitos Fundamentais</a>
+        <a href="#biblioteca">Preparação de Biblioteca</a>
+        <a href="#pipeline">Pipeline Bioinformático</a>
+        <a href="#qc">Controle de Qualidade</a>
+        <a href="#alignment">Alinhamento</a>
+        <a href="#variant">Variant Calling</a>
+        <a href="#assembly">Montagem de Genoma</a>
+        <a href="#experimentos">Tipos de Experimentos</a>
+        <a href="#ferramentas">Ferramentas</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#recursos">Recursos e Links</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>Next Generation Sequencing (NGS)</h1>
+
+        <div class="section" id="introducao">
+
+            <h2>Introdução</h2>
+
+            <p>
+                Next Generation Sequencing (NGS) refere-se a um conjunto de tecnologias de sequenciamento de DNA capazes
+                de sequenciar milhões ou bilhões de fragmentos simultaneamente.
+            </p>
+
+            <p>
+                Essas tecnologias revolucionaram a biologia molecular e permitiram o surgimento da bioinformática
+                moderna, possibilitando estudos em larga escala de genomas, transcriptomas e microbiomas.
+            </p>
+
+        </div>
+
+        <div class="section" id="historia">
+
+            <h2>História do Sequenciamento</h2>
+
+            <table>
+
+                <tr>
+                    <th>Período</th>
+                    <th>Tecnologia</th>
+                </tr>
+
+                <tr>
+                    <td>1977</td>
+                    <td>Sanger Sequencing</td>
+                </tr>
+
+                <tr>
+                    <td>2005</td>
+                    <td>Primeiras tecnologias NGS</td>
+                </tr>
+
+                <tr>
+                    <td>2010+</td>
+                    <td>Sequenciamento de terceira geração</td>
+                </tr>
+
+            </table>
+
+            <p>
+                O sequenciamento Sanger dominou por décadas, mas o NGS reduziu drasticamente o custo do sequenciamento
+                genômico.
+            </p>
+
+        </div>
+
+        <div class="section" id="geracoes">
+
+            <h2>Gerações de Sequenciamento</h2>
+
+            <h3>Primeira geração</h3>
+
+            <ul>
+                <li>Sanger sequencing</li>
+                <li>Alta precisão</li>
+                <li>Baixa escalabilidade</li>
+            </ul>
+
+            <h3>Segunda geração (NGS clássico)</h3>
+
+            <ul>
+                <li>Illumina</li>
+                <li>Ion Torrent</li>
+            </ul>
+
+            <h3>Terceira geração</h3>
+
+            <ul>
+                <li>PacBio SMRT</li>
+                <li>Oxford Nanopore</li>
+            </ul>
+
+        </div>
+
+        <div class="section" id="tecnologias">
+
+            <h2>Principais Tecnologias</h2>
+
+            <table>
+
+                <tr>
+                    <th>Tecnologia</th>
+                    <th>Características</th>
+                </tr>
+
+                <tr>
+                    <td>Illumina</td>
+                    <td>Alta precisão, reads curtas</td>
+                </tr>
+
+                <tr>
+                    <td>Oxford Nanopore</td>
+                    <td>Reads longas e sequenciamento em tempo real</td>
+                </tr>
+
+                <tr>
+                    <td>PacBio</td>
+                    <td>Alta fidelidade e reads longas</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="conceitos">
+
+            <h2>Conceitos Fundamentais</h2>
+
+            <ul>
+
+                <li><b>Read</b> — fragmento sequenciado</li>
+
+                <li><b>Coverage</b> — quantas vezes uma região do genoma foi sequenciada</li>
+
+                <li><b>Depth</b> — profundidade média de sequenciamento</li>
+
+                <li><b>Paired-end reads</b> — sequenciamento de ambas extremidades</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="biblioteca">
+
+            <h2>Preparação de Biblioteca</h2>
+
+            <p>
+                Antes do sequenciamento, o DNA precisa ser fragmentado e adaptadores precisam ser adicionados.
+            </p>
+
+            <pre>
+
+DNA
+ ↓
+Fragmentação
+ ↓
+Ligação de adaptadores
+ ↓
+Amplificação
+ ↓
+Biblioteca pronta
+
+</pre>
+
+        </div>
+
+        <div class="section" id="pipeline">
+
+            <h2>Pipeline Bioinformático</h2>
+
+            <pre>
+
+Sequenciamento
+ ↓
+FASTQ
+ ↓
+Quality Control
+ ↓
+Trimming
+ ↓
+Alignment
+ ↓
+Variant Calling
+ ↓
+Análise funcional
+
+</pre>
+
+        </div>
+
+        <div class="section" id="qc">
+
+            <h2>Controle de Qualidade</h2>
+
+            Ferramentas principais:
+
+            <ul>
+
+                <li>FastQC</li>
+
+                <li>MultiQC</li>
+
+                <li>Trimmomatic</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="alignment">
+
+            <h2>Alinhamento de Sequências</h2>
+
+            Ferramentas populares:
+
+            <ul>
+
+                <li>BWA</li>
+
+                <li>Bowtie2</li>
+
+                <li>STAR</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="variant">
+
+            <h2>Variant Calling</h2>
+
+            <p>
+                Processo de identificação de variantes genéticas comparando sequências com um genoma de referência.
+            </p>
+
+            Ferramentas:
+
+            <ul>
+
+                <li>GATK</li>
+
+                <li>FreeBayes</li>
+
+                <li>DeepVariant</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="assembly">
+
+            <h2>Montagem de Genoma</h2>
+
+            Tipos:
+
+            <ul>
+
+                <li>De novo assembly</li>
+
+                <li>Reference assembly</li>
+
+            </ul>
+
+            Ferramentas:
+
+            <ul>
+
+                <li>SPAdes</li>
+
+                <li>Velvet</li>
+
+                <li>Canu</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="experimentos">
+
+            <h2>Tipos de Experimentos NGS</h2>
+
+            <ul>
+
+                <li>Whole Genome Sequencing (WGS)</li>
+
+                <li>Whole Exome Sequencing (WES)</li>
+
+                <li>RNA-Seq</li>
+
+                <li>ChIP-Seq</li>
+
+                <li>ATAC-Seq</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="ferramentas">
+
+            <h2>Ferramentas Bioinformáticas</h2>
+
+            <table>
+
+                <tr>
+                    <th>Categoria</th>
+                    <th>Ferramenta</th>
+                </tr>
+
+                <tr>
+                    <td>QC</td>
+                    <td>FastQC</td>
+                </tr>
+
+                <tr>
+                    <td>Alignment</td>
+                    <td>BWA</td>
+                </tr>
+
+                <tr>
+                    <td>Variant Calling</td>
+                    <td>GATK</td>
+                </tr>
+
+                <tr>
+                    <td>Assembly</td>
+                    <td>SPAdes</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="section" id="aplicacoes">
+
+            <h2>Aplicações Científicas</h2>
+
+            <ul>
+
+                <li>Genômica humana</li>
+
+                <li>Medicina personalizada</li>
+
+                <li>Diagnóstico molecular</li>
+
+                <li>Estudos evolutivos</li>
+
+                <li>Metagenômica</li>
+
+            </ul>
+
+        </div>
+
+        <div class="section" id="recursos">
+
+            <h2>Recursos e Links</h2>
+
+            <ul>
+
+                <li>NCBI: https://www.ncbi.nlm.nih.gov</li>
+
+                <li>Illumina: https://www.illumina.com</li>
+
+                <li>Oxford Nanopore: https://nanoporetech.com</li>
+
+                <li>GATK: https://gatk.broadinstitute.org</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-left">
+
+            <strong>Bioinformática — Portal de Estudos</strong>
+
+            <div class="footer-credit">
+                Criado por Anderson Matte
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="https://www.linkedin.com/in/andersonmatte/" target="_blank">
+                💼 LinkedIn
+            </a>
+
+            <a href="https://github.com/andersonmatte/andersonmatte" target="_blank">
+                📱 GitHub
+            </a>
+
+            <a href="https://medium.com/@anderson.matte" target="_blank">
+                📰 Medium
+            </a>
+
+            <a href="https://lattes.cnpq.br/8025680832155113" target="_blank">
+                🌎 Lattes
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

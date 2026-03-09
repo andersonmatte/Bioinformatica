@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="../css/portal.css" rel="stylesheet">
+    <script src="../js/portal.js"></script>
+
+    <title>Formatos de Arquivos</title>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="../index.html">🏠 Home</a>
+    <a href="resumo-bioinformatica.html">📚 Resumo</a>
+    <a href="mapa-mental-bioinformatica.html">🧠 Mapa Mental</a>
+    <a href="guia-ferramentas-bioinformatica.html">🧪 Ferramentas</a>
+
+    <a href="pipeline-bioinformatica.html">🧬 Pipeline</a>
+    <a href="rna-seq.html">🧫 RNA-Seq</a>
+    <a href="machine-learning-genomica.html">🤖 ML Genômica</a>
+
+    <a href="curso-bioinformatica.html">📄 Curso</a>
+
+    <input id="search" placeholder="Buscar..." type="text">
+
+</nav>
+
+<div class="layout">
+
+    <div class="sidebar">
+
+        <h2>Arquivos</h2>
+
+        <a href="#fasta">FASTA</a>
+        <a href="#fastq">FASTQ</a>
+        <a href="#sam">SAM/BAM</a>
+        <a href="#vcf">VCF</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>Formatos de Arquivos em Bioinformática</h1>
+
+        <div class="section" id="fasta">
+
+            <h2>FASTA</h2>
+
+            <pre>
+>seq1
+ATGCGTACGTACGT
+</pre>
+
+        </div>
+
+        <div class="section" id="fastq">
+
+            <h2>FASTQ</h2>
+
+            <pre>
+@seq1
+ATGCGTACGT
++
+IIIIIIIIII
+</pre>
+
+        </div>
+
+        <div class="section" id="sam">
+
+            <h2>SAM / BAM</h2>
+
+            <p>Formato usado para alinhamento de sequências.</p>
+
+        </div>
+
+        <div class="section" id="vcf">
+
+            <h2>VCF</h2>
+
+            <p>Formato usado para variantes genéticas.</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
