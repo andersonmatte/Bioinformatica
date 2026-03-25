@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": "leitor-fasta-biojava-brca1",
+      "title": "Construindo um Leitor de FASTA em Java com BioJava para Análise de Sequências Genéticas",
+      "subtitle": "Aplicando Bioinformática com Dados Reais do Gene BRCA1",
+      "author": "Anderson Matte Tamborim",
+      "date": "2026-03-25",
+      "tags": [
+        "Java",
+        "BioJava",
+        "Bioinformática",
+        "Genômica",
+        "Data Science",
+        "Saúde",
+        "Análise de Dados",
+        "Sequenciamento"
+      ],
+      "contentHtml": "<p>A bioinformática é uma área interdisciplinar que combina biologia, ciência de dados e engenharia de software para analisar informações genéticas. Um dos formatos mais utilizados nesse contexto é o <strong>FASTA</strong>, amplamente empregado para armazenar sequências de DNA, RNA e proteínas.</p><p>Neste projeto, desenvolvemos um <strong>leitor e analisador de arquivos FASTA em Java</strong>, utilizando a biblioteca <strong>BioJava</strong>, uma das principais ferramentas open source para manipulação de dados biológicos.</p><p>O objetivo foi criar uma aplicação prática que permita realizar análises completas de sequências genéticas.</p><p><br></p><p><strong>Fonte dos Dados (Insumos)</strong></p><p><br></p><p>Para validar o funcionamento do analisador, foi utilizada uma sequência genética real disponível publicamente na base de dados do NCBI.</p><p><strong>Arquivo utilizado:</strong></p><pre class=\"ql-syntax\" spellcheck=\"false\">NG_005905.2.fna</pre><p>Essa sequência corresponde ao gene humano <strong>BRCA1</strong>.</p><p><strong>Link oficial da sequência:</strong></p><p><a href=\"https://www.ncbi.nlm.nih.gov/search/all/?term=NG_005905.2\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.ncbi.nlm.nih.gov/search/all/?term=NG_005905.2</a></p><p><br></p><p><strong>Tecnologias Utilizadas</strong></p><ul><li>Java</li><li>BioJava</li><li>Maven</li><li>Git e GitHub</li></ul><p><br></p><p><strong>Como Executar o Projeto</strong></p><p><strong>1) Clonar o repositório</strong></p><pre class=\"ql-syntax\" spellcheck=\"false\">git clone https://github.com/andersonmatte/leitor-de-fasta</pre><p><strong>2) Compilar</strong></p><pre class=\"ql-syntax\" spellcheck=\"false\">mvn compile</pre><p><strong>3) Executar</strong></p><pre class=\"ql-syntax\" spellcheck=\"false\">mvn exec:java -Dexec.mainClass=br.com.webmatte.App</pre><p><br></p><p><strong>Repositório do Projeto</strong></p><p><a href=\"https://github.com/andersonmatte/leitor-de-fasta\" target=\"_blank\" rel=\"noopener noreferrer\">Código-fonte disponível no GitHub</a></p><p><br></p><p><strong>Conclusão</strong></p><p>O desenvolvimento de um leitor de FASTA em Java utilizando BioJava demonstra como a tecnologia pode ser aplicada diretamente à análise de dados biológicos.</p>"
+    }
+  ]
+}

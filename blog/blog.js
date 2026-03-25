@@ -1,8 +1,43 @@
 async function loadPosts() {
-  const res = await fetch("./posts.json", { cache: "no-store" });
-  if (!res.ok) throw new Error("Falha ao carregar posts.json");
-  const data = await res.json();
-  return Array.isArray(data.posts) ? data.posts : [];
+  try {
+    // Lista dos arquivos JSON existentes
+    const files = [
+      "posts.json",
+      "posts1.json"
+      // adicione novos aqui quando criar
+    ];
+
+    const responses = await Promise.all(
+        files.map(file =>
+            fetch(`./json/${file}`, {
+              cache: "no-store"
+            })
+        )
+    );
+
+    const jsonData = await Promise.all(
+        responses.map(res => {
+          if (!res.ok) {
+            throw new Error(`Erro ao carregar ${res.url}`);
+          }
+          return res.json();
+        })
+    );
+
+    const allPosts = jsonData.flatMap(data => {
+      if (Array.isArray(data)) return data;
+      if (Array.isArray(data.posts)) return data.posts;
+      return [];
+    });
+
+    console.log("Posts carregados:", allPosts);
+
+    return allPosts.sort(byDateDesc);
+
+  } catch (error) {
+    console.error("Erro ao carregar posts:", error);
+    return [];
+  }
 }
 
 function byDateDesc(a, b) {
