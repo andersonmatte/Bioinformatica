@@ -10,7 +10,7 @@ async function loadFooter() {
     try {
 
         const res =
-            await fetch("/footer.html");
+            await fetch(getFooterPath());
 
         const html =
             await res.text();
@@ -30,6 +30,23 @@ async function loadFooter() {
             e
         );
     }
+}
+
+function getFooterPath() {
+
+    const depth =
+        window.location.pathname
+            .split("/")
+            .filter(Boolean)
+            .length - 1;
+
+    let prefix = "";
+
+    for (let i = 0; i < depth; i++) {
+        prefix += "../";
+    }
+
+    return prefix + "footer.html";
 }
 
 function applyFooterLayout(layout) {
