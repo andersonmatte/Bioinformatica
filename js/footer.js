@@ -9,8 +9,26 @@ async function loadFooter() {
 
     try {
 
+        /*
+         Descobre automaticamente
+         o caminho base do site
+        */
+
+        const basePath =
+            window.location.pathname
+                .includes("/Bioinformatica/")
+                ? "/Bioinformatica/"
+                : "/";
+
         const res =
-            await fetch(getFooterPath());
+            await fetch(
+                basePath + "footer.html"
+            );
+
+        if (!res.ok)
+            throw new Error(
+                "Footer não encontrado"
+            );
 
         const html =
             await res.text();
@@ -21,7 +39,9 @@ async function loadFooter() {
             placeholder.dataset.layout
         );
 
-        initVisitorCounter();
+        if (typeof initVisitorCounter === "function") {
+            initVisitorCounter();
+        }
 
     } catch (e) {
 
@@ -30,23 +50,6 @@ async function loadFooter() {
             e
         );
     }
-}
-
-function getFooterPath() {
-
-    const depth =
-        window.location.pathname
-            .split("/")
-            .filter(Boolean)
-            .length - 1;
-
-    let prefix = "";
-
-    for (let i = 0; i < depth; i++) {
-        prefix += "../";
-    }
-
-    return prefix + "footer.html";
 }
 
 function applyFooterLayout(layout) {
@@ -59,26 +62,15 @@ function applyFooterLayout(layout) {
     switch (layout) {
 
         case "sidebar":
-
-            footer.classList.add(
-                "footer-sidebar"
-            );
-
+            footer.classList.add("footer-sidebar");
             break;
 
         case "content":
-
-            footer.classList.add(
-                "footer-content"
-            );
-
+            footer.classList.add("footer-content");
             break;
 
         default:
-
-            footer.classList.add(
-                "footer-full"
-            );
+            footer.classList.add("footer-full");
     }
 }
 

@@ -26,7 +26,10 @@ function initVisitorCounter() {
         );
     }
 
-    document.getElementById(
-        "visit-count"
-    ).textContent = count;
+    const el =
+        document.getElementById("visit-count");
+
+    if (el) {
+        el.textContent = count;
+    }
 }
