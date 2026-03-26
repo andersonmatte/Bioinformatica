@@ -18,7 +18,7 @@
 <body>
 
 <nav class="navbar">
-    <button class="nav-toggle" type="button" aria-label="Abrir menu">☰</button>
+    <button aria-label="Abrir menu" class="nav-toggle" type="button">☰</button>
     <div class="nav-links">
         <a href="../index.html">🏠 Home</a>
         <a href="./index.html">📰 Blog</a>
@@ -37,30 +37,30 @@
     <div class="admin-grid">
         <div class="admin-panel">
             <label class="admin-label">ID (slug)</label>
-            <input id="post-id" class="admin-input" placeholder="ex: rna-seq-introducao" type="text">
+            <input class="admin-input" id="post-id" placeholder="ex: rna-seq-introducao" type="text">
 
             <label class="admin-label">Título</label>
-            <input id="post-title" class="admin-input" placeholder="Título do post" type="text">
+            <input class="admin-input" id="post-title" placeholder="Título do post" type="text">
 
             <label class="admin-label">Subtítulo</label>
-            <input id="post-subtitle" class="admin-input" placeholder="Resumo curto (opcional)" type="text">
+            <input class="admin-input" id="post-subtitle" placeholder="Resumo curto (opcional)" type="text">
 
             <div class="admin-row">
                 <div>
                     <label class="admin-label">Autor</label>
-                    <input id="post-author" class="admin-input" placeholder="Seu nome" type="text">
+                    <input class="admin-input" id="post-author" placeholder="Seu nome" type="text">
                 </div>
                 <div>
                     <label class="admin-label">Data</label>
-                    <input id="post-date" class="admin-input" type="date">
+                    <input class="admin-input" id="post-date" type="date">
                 </div>
             </div>
 
             <label class="admin-label">Tags (separadas por vírgula)</label>
-            <input id="post-tags" class="admin-input" placeholder="ex: rna-seq, ngs, expressão gênica" type="text">
+            <input class="admin-input" id="post-tags" placeholder="ex: rna-seq, ngs, expressão gênica" type="text">
 
             <label class="admin-label">Imagem de capa (caminho no repositório)</label>
-            <input id="post-cover" class="admin-input" value="../blog/uploads/cover-placeholder.svg" type="text">
+            <input class="admin-input" id="post-cover" type="text" value="../blog/uploads/cover-placeholder.svg">
 
             <div class="admin-actions">
                 <button class="admin-btn" id="btn-open">Abrir posts.json</button>
@@ -69,16 +69,18 @@
             </div>
 
             <div class="admin-help">
-                <div><strong>Imagens:</strong> coloque arquivos em <code>blog/uploads/</code> e use o caminho relativo.</div>
-                <div><strong>Publicação:</strong> depois de salvar, faça commit/push no GitHub para aparecer no site.</div>
+                <div><strong>Imagens:</strong> coloque arquivos em <code>blog/uploads/</code> e use o caminho relativo.
+                </div>
+                <div><strong>Publicação:</strong> depois de salvar, faça commit/push no GitHub para aparecer no site.
+                </div>
             </div>
         </div>
 
         <div class="admin-editor">
             <label class="admin-label">Conteúdo</label>
-            <div id="editor" class="editor"></div>
+            <div class="editor" id="editor"></div>
             <div class="admin-preview-title">Prévia</div>
-            <div id="preview" class="blog-post-content blog-preview"></div>
+            <div class="blog-post-content blog-preview" id="preview"></div>
         </div>
     </div>
 
@@ -89,10 +91,10 @@
         theme: "snow",
         modules: {
             toolbar: [
-                [{ header: [1, 2, 3, false] }],
+                [{header: [1, 2, 3, false]}],
                 ["bold", "italic", "underline", "strike"],
-                [{ color: [] }, { background: [] }],
-                [{ list: "ordered" }, { list: "bullet" }],
+                [{color: []}, {background: []}],
+                [{list: "ordered"}, {list: "bullet"}],
                 ["blockquote", "code-block"],
                 ["link", "image"],
                 ["clean"]
@@ -100,7 +102,7 @@
         }
     });
 
-    let db = { posts: [] };
+    let db = {posts: []};
 
     function slugify(v) {
         return (v || "")
@@ -126,17 +128,18 @@
 
         document.getElementById("post-id").value = id;
 
-        return { id, title, subtitle, author, date, tags, contentHtml };
+        return {id, title, subtitle, author, date, tags, contentHtml};
     }
 
     function setPreview() {
         document.getElementById("preview").innerHTML = quill.root.innerHTML;
     }
+
     quill.on("text-change", setPreview);
     setPreview();
 
     function downloadJson(filename, obj) {
-        const blob = new Blob([JSON.stringify(obj, null, 2)], { type: "application/json" });
+        const blob = new Blob([JSON.stringify(obj, null, 2)], {type: "application/json"});
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
@@ -154,7 +157,7 @@
             return;
         }
         const [handle] = await window.showOpenFilePicker({
-            types: [{ description: "JSON", accept: { "application/json": [".json"] } }],
+            types: [{description: "JSON", accept: {"application/json": [".json"]}}],
             multiple: false
         });
         const file = await handle.getFile();
@@ -195,6 +198,11 @@
     // defaults
     document.getElementById("post-date").value = new Date().toISOString().slice(0, 10);
 </script>
+
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+<script src="/js/visitor-counter.js"></script>
+<script src="/js/footer.js"></script>
 
 </body>
 </html>

@@ -657,10 +657,36 @@ iframe {
 
 .footer {
     margin-top: 80px;
-    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-    border-top: none;
+    background: linear-gradient(
+            180deg,
+            #0f172a 0%,
+            #1e293b 100%
+    );
     padding: 48px 24px;
     color: rgba(255, 255, 255, 0.9);
+}
+
+/* FULL WIDTH */
+
+.footer-full .footer-container {
+
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* CONTEÚDO CENTRAL */
+
+.footer-content .footer-container {
+
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* COM SIDEBAR (como CRISPR) */
+
+.footer-sidebar {
+
+    margin-left: 260px;
 }
 
 /* quando existir sidebar */
@@ -816,4 +842,31 @@ iframe {
         flex-direction: column;
         text-align: center;
     }
+}
+
+/* RESPONSIVIDADE DO FOOTER */
+
+@media (max-width: 768px) {
+
+    .footer {
+        margin-left: 0 !important;
+        padding: 32px 16px;
+    }
+
+    .footer-sidebar {
+        margin-left: 0 !important;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
 }
